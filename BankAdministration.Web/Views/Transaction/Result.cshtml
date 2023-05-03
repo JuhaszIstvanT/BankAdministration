@@ -1,0 +1,10 @@
+﻿@using BankAdministration.Web.Models;
+
+@model TransactionViewModel
+
+<div>Az utalást sikeresen rögzítettük!</div>
+
+
+<div>Az utalás összege: <strong>@Model.Amount</strong> Ft.</div>
+
+<a asp-controller="Transaction" asp-action="Index" asp-route-accountId="@Model.Account.Id"><button class="btn btn-success">Vissza</button></a>

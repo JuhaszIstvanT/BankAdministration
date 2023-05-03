@@ -1,0 +1,35 @@
+﻿@using BankAdministration.Web.Models;
+
+@model IEnumerable<Account>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bank adminisztráció</title>
+</head>
+<body>
+    <div>
+        @if (Model == null || Model.Count() == 0)
+        {
+            <div>Jelenleg nincs elérhető fiók.</div>
+        }
+        else
+        {
+            foreach (Account account in Model)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@account.AccountNumber</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">@account.Balance Ft</h6>
+                        <a asp-controller="Account" asp-action="Details" asp-route-accountId="@account.Id"><button class="btn btn-success">Számlatörténet</button></a>
+                    </div>
+                </div>
+
+                <br />
+            }
+        }
+    </div>
+</body>
+</html>

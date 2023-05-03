@@ -1,0 +1,33 @@
+﻿@using BankAdministration.Web.Models;
+
+@model TransactionViewModel
+
+<div>
+    <form asp-controller="Transaction" asp-action="Index" asp-route-accountId="@Model.Account.Id">
+        <div class="form-group">
+
+            <label for="amount">Összeg</label>
+            <input asp-for="Amount" class="form-control" />
+            <span asp-validation-for="Amount"></span>
+            <br />
+            <br />
+            <label for="destinationaccountname">Célszámla tulajdonosa</label>
+            <input asp-for="DestinationAccountName" class="form-control" />
+            <span asp-validation-for="DestinationAccountName"></span>
+            <br />
+            <br />
+            <label for="destinationaccountnumber">Célszámla száma</label>
+            <input asp-for="DestinationAccountNumber" class="form-control" />
+            <span asp-validation-for="DestinationAccountNumber"></span>
+            <br />
+            <br />
+
+            <input type="submit" class="btn btn-primary" value="Utalás" />
+        </div>
+    </form>
+</div>
+
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}

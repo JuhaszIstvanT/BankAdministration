@@ -1,0 +1,36 @@
+﻿@using BankAdministration.Web.Models;
+
+@model LoginViewModel
+<form asp-controller="Login" asp-action="Login">
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <label for="username">Felhasználónév</label>
+        <input asp-for="UserName" class="form-control"/>
+        <span asp-validation-for="UserName"></span>
+        <br />
+        <br />
+        <label for="password">Jelszó</label>
+        <input asp-for="Password" class="form-control"/>
+        <span asp-validation-for="Password"></span>
+        <br />
+        <br />
+        <label for="accountnumber">Számlaszám</label>
+        <input asp-for="AccountNumber" class="form-control"/>
+        <span asp-validation-for="AccountNumber"></span>
+        <br />
+        <br />
+        <label for="pin">Pin</label>
+        <input asp-for="Pin" class="form-control"/>
+        <span asp-validation-for="Pin"></span>
+        <br />
+        <br />
+
+        <input type="submit" class="btn btn-primary" value="Bejelentkezés"/>
+    </div>
+</form>
+
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}
